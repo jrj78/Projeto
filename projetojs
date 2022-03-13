@@ -1,0 +1,44 @@
+const form = document.getElementById('form')
+const nome = document.getElementById('nome')
+const email = document.getElementById('email')
+const mensagem = document.getElementById('mensagem')
+
+
+form.addEventListener('submit', (e) -> {
+	e.preventDefault()
+
+	chekInputs()
+})
+
+function chekInputs() {
+	const usernameValue = nome.value.trim()
+	const emailValue = email.value.trim()
+	const mensagemValue = mensagem.value.trim()
+}
+
+if(usernameValue === ""){
+
+		errorValidation(nome, "Preencha esse Campo")
+
+	else{
+		sucessValidation(nome)
+
+	}
+}
+
+function errorValidation(input, message){
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('Small')
+
+	small.innerText = message 
+
+	formControl.className = 'form-Control error'
+
+}
+
+
+function sucessValidation(inpu) {
+	const formControl = input.parentElement;
+
+	formControl.className='form-Control sucess'
+}
